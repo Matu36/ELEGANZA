@@ -20,8 +20,10 @@ function App() {
           <Card key={camisa.id} {...camisa} />
         ))}
       </div>
-
-      <img src={ELEGANZA} alt="camisas" className="camisas" />
+      <br />
+      <div className="ELEGANZA">
+        <img src={ELEGANZA} alt="camisas" className="camisas" />
+      </div>
     </div>
   );
 }
