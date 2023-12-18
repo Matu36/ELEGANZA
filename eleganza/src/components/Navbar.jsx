@@ -7,14 +7,14 @@ export default function NavBar({ onSelectMarca }) {
   };
 
   return (
-    <div>
+    <div className="navbar">
       <button
         className="marca"
         onClick={() => handleMarcaClick("Todas las marcas")}
       >
         Todas las marcas
       </button>
-      <button className="marca" onClick={() => handleMarcaClick("tommy")}>
+      <button className="marca" onClick={() => handleMarcaClick("Tommy")}>
         Tommy
       </button>
       <button className="marca" onClick={() => handleMarcaClick("GAP")}>

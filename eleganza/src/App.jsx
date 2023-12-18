@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CAMISA5 from "../src/assets/img/CAMISA5.jpg";
+import ELEGANZA from "../src/assets/img/ELEGANZA.png";
 import NavBar from "./components/navbar";
 import { camisas } from "../src/utils/Camisas";
 import Card from "./components/Card";
@@ -14,14 +14,14 @@ function App() {
   return (
     <div className="landing">
       <NavBar onSelectMarca={setSelectedMarca} />
-
+      <br />
       <div className="cards-container">
         {filteredCamisas.map((camisa) => (
           <Card key={camisa.id} {...camisa} />
         ))}
       </div>
 
-      <img src={CAMISA5} alt="camisas" className="camisas" />
+      <img src={ELEGANZA} alt="camisas" className="camisas" />
     </div>
   );
 }
