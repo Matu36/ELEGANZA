@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ELEGANZA from "../src/assets/img/ELEGANZA.png";
+import CAMISA5 from "../src/assets/img/CAMISA5.jpg";
 import NavBar from "./components/navbar";
 import { camisas } from "../src/utils/Camisas";
 import Card from "./components/Card";
@@ -20,9 +20,9 @@ function App() {
           <Card key={camisa.id} {...camisa} />
         ))}
       </div>
-      <br />
-      <div className="ELEGANZA">
-        <img src={ELEGANZA} alt="camisas" className="camisas" />
+
+      <div className="CAMISAS">
+        <img src={CAMISA5} alt="camisas" className="camisas" />
       </div>
     </div>
   );
