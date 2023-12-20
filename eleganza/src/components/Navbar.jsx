@@ -1,13 +1,17 @@
 import React from "react";
 import "../App.css";
+import ELEGANZA from "../assets/img/ELEGANZA.png";
 
-export default function NavBar({ onSelectMarca }) {
+export default function NavBar({ onSelectMarca, onInicio }) {
   const handleMarcaClick = (marca) => {
     onSelectMarca(marca);
   };
 
   return (
     <div className="navbar">
+      <button className="marca" onClick={() => onInicio()}>
+        Inicio
+      </button>
       <button
         className="marca"
         onClick={() => handleMarcaClick("Todas las marcas")}
@@ -26,6 +30,7 @@ export default function NavBar({ onSelectMarca }) {
       <button className="marca" onClick={() => handleMarcaClick("Kevingston")}>
         Kevingston
       </button>
+      <img src={ELEGANZA} alt="" className="footerimage" />
     </div>
   );
 }
