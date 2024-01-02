@@ -4,6 +4,7 @@ import NavBar from "./components/navbar";
 import { camisas } from "../src/utils/Camisas";
 import Card from "./components/Card";
 import Footer from "./pages/footer";
+import ELEGANZA from "../src/assets/img/ELEGANZA.png";
 
 function App() {
   const [selectedMarca, setSelectedMarca] = useState();
@@ -18,8 +19,17 @@ function App() {
 
   return (
     <div className="root">
-      <NavBar onSelectMarca={setSelectedMarca} onInicio={handleInicioClick} />
-      <br />
+      <div className="eleganzaContainer">
+        <div>
+          <NavBar
+            onSelectMarca={setSelectedMarca}
+            onInicio={handleInicioClick}
+          />
+        </div>
+        <div className="eleganzaImgContainer">
+          <img src={ELEGANZA} alt="ELEGANZA" />
+        </div>
+      </div>
       {filteredCamisas.length > 0 ? (
         <div className="cards-container">
           {filteredCamisas.map((camisa) => (
@@ -27,12 +37,11 @@ function App() {
           ))}
         </div>
       ) : (
-        <div className="CAMISAS">
-          <img src={CAMISA5} alt="camisas" className="camisas" />
+        <div className="camisasContainer">
+          <img src={CAMISA5} alt="camisas" className="camisasImg" />
         </div>
       )}
-      <br />
-      <br />
+
       <Footer />
     </div>
   );
