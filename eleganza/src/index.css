@@ -1,4 +1,3 @@
-@import 'typeface-cormorant-garamond';
 
 :root {
   font-family: 'Cormorant Garamond', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, serif;
@@ -13,21 +12,36 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color:white;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: white;
 }
 
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+@font-face {
+  font-family: 'Hurricane';
+  src: url("../src/assets/fonts/Hurricane-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Indie';
+  src: url("../src/assets/fonts/IndieFlower-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 button {
@@ -68,6 +82,8 @@ button:focus-visible {
   padding: 0.6em 1.2em; 
   margin-right: 3rem;
   margin-bottom: 1rem;
+  font-family: 'Indie', sans-serif;
+  font-size: 18px;
   
 }
 
@@ -217,5 +233,49 @@ flex-direction: column;
 margin-top: 3rem;
 margin-left: 2rem;
 }
+
+.onSale {
+  font-family: 'Hurricane', sans-serif;
+  font-size: 40px;
+  margin-left: 5rem;
+  margin-top: 3rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.onSale h1 {
+  display: inline-block;
+  position: relative;
+  border-bottom: 2px solid transparent; /* Línea subrayada inicialmente transparente */
+}
+
+.onSale h1::after {
+  content: ''; /* Pseudo-elemento para crear la línea subrayada */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #007bff; /* Color y estilo de la línea subrayada */
+  transform: scaleX(0); /* Escala inicialmente a 0 (invisibilidad) */
+  transform-origin: 100% 50%;
+  transition: transform 0.3s ease; /* Transición para un efecto más suave */
+}
+
+.onSale h1:hover::after {
+  transform: scaleX(1); /* Al pasar el mouse, escala a 1 (visible) */
+}
+
+
 
 

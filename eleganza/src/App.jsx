@@ -29,20 +29,26 @@ function App() {
         <div className="eleganzaImgContainer">
           <img src={ELEGANZA} alt="ELEGANZA" />
         </div>
+        <div className="onSale">
+          <h1>On Sale !</h1>
+        </div>
       </div>
-      {filteredCamisas.length > 0 ? (
-        <div className="cards-container">
-          {filteredCamisas.map((camisa) => (
-            <Card key={camisa.id} {...camisa} />
-          ))}
-        </div>
-      ) : (
-        <div className="camisasContainer">
-          <img src={CAMISA5} alt="camisas" className="camisasImg" />
-        </div>
-      )}
+
+      <div className="cards-container" id="cards">
+        {filteredCamisas.map((camisa) => (
+          <Card key={camisa.id} {...camisa} />
+        ))}
+      </div>
+
+      <div className="camisasContainer">
+        <img src={CAMISA5} alt="camisas" className="camisasImg" />
+      </div>
 
       <Footer />
+      <br />
+      <span className="copy">
+        Copyright © 2024 | Eleganza Shirts Todos los derechos reservados
+      </span>
     </div>
   );
 }
