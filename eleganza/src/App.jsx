@@ -5,6 +5,7 @@ import { camisas } from "../src/utils/Camisas";
 import Card from "./components/Card";
 import Footer from "./pages/footer";
 import ELEGANZA from "../src/assets/img/ELEGANZA.png";
+import SliderModels from "./components/SliderModels";
 
 function App() {
   const [selectedMarca, setSelectedMarca] = useState();
@@ -43,7 +44,7 @@ function App() {
       <div className="camisasContainer">
         <img src={CAMISA5} alt="camisas" className="camisasImg" />
       </div>
-
+      {/* <SliderModels /> */}
       <Footer />
       <br />
       <span className="copy">

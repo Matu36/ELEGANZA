@@ -5,6 +5,8 @@ import polo2 from "../assets/img/polo/polo3.jpg";
 import polo3 from "../assets/img/polo/polo4.jpg";
 import kevin from "../assets/img/kevingston/kevin1.jpg";
 import gap from "../assets/img/gap/gap1.jpg";
+import remera1 from "../assets/img/remera1.jpg";
+import remera2 from "../assets/img/remera2.jpg";
 
 export const camisas = [
   {
@@ -55,5 +57,17 @@ export const camisas = [
     talle: "XL",
     imagen: kevin,
     precio: 9000,
+  },
+];
+
+export const SliderModel = [
+  {
+    id: 11,
+    imagen: remera1,
+  },
+
+  {
+    id: 12,
+    imagen: remera2,
   },
 ];
