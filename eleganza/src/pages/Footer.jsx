@@ -1,7 +1,7 @@
 import React from "react";
 import CAMISA6 from "../assets/img/CAMISA6.jpg";
 
-export default function Footer() {
+export default function Footer({ handleMostrarModalAbout }) {
   return (
     <div className="footer">
       <div className="footerSpan">
@@ -15,7 +15,9 @@ export default function Footer() {
       </div>
       <div className="footerSpan">
         <span className="spantitle">Institucional</span>
-        <button className="spanbody">Sobre Nosotros</button>
+        <button onClick={handleMostrarModalAbout} className="spanbody">
+          Sobre Nosotros
+        </button>
       </div>
       <img src={CAMISA6} className="footerImage" />
     </div>

@@ -97,19 +97,26 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 25px;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 150px; 
-  margin: 10px; 
+  max-width: 150px;
+  margin: 10px;
+  background-color: white; 
+  transition: transform 0.3s ease-in-out; 
+}
+
+.card:hover {
+  transform: scale(1.05); 
 }
 
 .card-image {
-
   width: 100%;
-  height: 150px; 
-  object-fit: contain; 
+  height: 150px;
+  object-fit: cover; 
+ 
+  border-radius: 8px; 
   margin-bottom: 10px;
 }
 
@@ -127,8 +134,9 @@ button:focus-visible {
 .cards-container {
   display: flex;
   justify-content: space-between;
-  
+  flex-wrap: wrap;
 }
+
 
 /* Estilos del botón "Comprar" */
 
@@ -189,7 +197,7 @@ button:focus-visible {
 }
 
 .eleganzaImgContainer {
-  margin-left: 2rem;
+  margin-left: 4rem;
 }
 
 .navbar {
@@ -202,7 +210,7 @@ button:focus-visible {
 margin-top: 4rem;
 margin-left: 2rem;
 display: flex;
-justify-content: flex-end;
+justify-content: flex-start
 }
 
 .camisasImg {
@@ -218,9 +226,10 @@ justify-content: flex-end;
 }
 
 .spanbody {
-  color: gray;
+  color: grey;
   background: none;
-  font-weight: bold;
+  font-size: smaller;
+  
 }
 
 .spanbody:hover {
@@ -275,6 +284,131 @@ margin-left: 2rem;
 .onSale h1:hover::after {
   transform: scaleX(1); /* Al pasar el mouse, escala a 1 (visible) */
 }
+
+/* SliderModels.css */
+
+/* Agrega estos estilos a tu hoja de estilos CSS */
+
+.custom-slider {
+  margin: 0 -50px; /* Espacio entre las imágenes */
+  margin-top: 3rem;
+}
+
+.slider-item {
+  padding: 10px; /* Espacio dentro de cada imagen */
+  border: 1px solid #ddd; /* Borde */
+  background-color: #f5f5f5; /* Fondo gris claro */
+}
+
+.slider-item img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* AnimatedWord.css */
+
+.animated-word {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.animated-word::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1em;
+  vertical-align: bottom;
+  background-color: #000; /* Color del fondo del texto */
+  animation: revealAnimation 3s linear;
+}
+
+@keyframes revealAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animated-word::after {
+  animation-iteration-count: infinite;
+  animation-delay: -3s; /* Asegura que la animación comience inmediatamente después de la primera iteración */
+}
+
+/* ABOUT US */
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background-color: #f0e4d7; /* Color arena */
+  padding: 20px;
+}
+
+
+
+.about-image {
+  max-width: 100%;
+  height: 400px;
+  margin-right: 20px;
+}
+
+.about-content {
+  flex-grow: 1;
+}
+
+.about-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333; 
+}
+
+.about-content span {
+  font-size: 16px;
+  text-align: justify;
+  color: #333; 
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 30px; 
+  right: 30px; 
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+ 
+  background: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

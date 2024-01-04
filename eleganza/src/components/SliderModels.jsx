@@ -1,31 +1,67 @@
 import React from "react";
 import Slider from "react-slick";
-import { SliderModel } from "../utils/Camisas";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import remera1 from "../assets/img/remera1.jpg";
+import remera2 from "../assets/img/remera2.jpg";
+import remera3 from "../assets/img/remera3.jpg";
+import remera4 from "../assets/img/remera4.jpg";
+import remera5 from "../assets/img/remera5.jpg";
 
 export default function SliderModels() {
   const settings = {
-    dots: false,
-    infinite: true,
+    dots: true,
+    infinite: false,
+    arrows: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: false,
-    fade: true,
-    cssEase: "linear",
-    arrows: false,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div>
-      <Slider {...settings}>
-        {SliderModel.map((imagen) => (
-          <div key={imagen.id}>
-            <img src={imagen.imagen} alt="imagen" />
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <Slider {...settings} className="custom-slider">
+      <div className="slider-item">
+        <img src={remera1} alt="remera1" />
+      </div>
+      <div className="slider-item">
+        <img src={remera2} alt="remera2" />
+      </div>
+      <div className="slider-item">
+        <img src={remera3} alt="remera3" />
+      </div>
+      <div className="slider-item">
+        <img src={remera4} alt="remera4" />
+      </div>
+      <div className="slider-item">
+        <img src={remera5} alt="remera5" />
+      </div>
+    </Slider>
   );
 }

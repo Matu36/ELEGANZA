@@ -7,6 +7,7 @@ import kevin from "../assets/img/kevingston/kevin1.jpg";
 import gap from "../assets/img/gap/gap1.jpg";
 import remera1 from "../assets/img/remera1.jpg";
 import remera2 from "../assets/img/remera2.jpg";
+import remera3 from "../assets/img/remera3.jpg";
 
 export const camisas = [
   {
@@ -62,12 +63,16 @@ export const camisas = [
 
 export const SliderModel = [
   {
-    id: 11,
+    id: 1,
     imagen: remera1,
   },
 
   {
-    id: 12,
+    id: 2,
     imagen: remera2,
+  },
+  {
+    id: 3,
+    imagen: remera3,
   },
 ];
