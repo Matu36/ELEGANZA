@@ -55,7 +55,9 @@ export default function CarritoModal() {
   return (
     <div className="carrito">
       {carrito.length === 0 ? (
-        <p>El carrito está vacío</p>
+        <p style={{ fontWeight: "bold", color: "gray" }}>
+          El carrito esta vacío
+        </p>
       ) : (
         carrito.map((item) => (
           <div className="cart-item" key={item.id}>
@@ -75,7 +77,9 @@ export default function CarritoModal() {
       )}
       {carrito.length > 0 ? (
         <>
-          <p>Precio Total: ${precioTotal}</p>
+          <p style={{ fontWeight: "bold", color: "gray" }}>
+            Precio Total: $ {precioTotal}
+          </p>
           <div className="cart-item-actions">
             <button onClick={handleComprar}>Encargar</button>
             <button onClick={removeAllItemsFromCart}>Vaciar Carrito</button>

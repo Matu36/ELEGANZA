@@ -60,16 +60,14 @@ function App() {
   return (
     <div className={`container ${scrolled ? "scrolled" : ""}`}>
       {modalCarrito && (
-        <div className="modal">
-          <div className="modal-content">
-            <button
-              className="close-button-carrito"
-              onClick={handleCerrarModalCarrito}
-            >
-              <GrClose />
-            </button>
-            <CarritoModal />
-          </div>
+        <div>
+          <button
+            className="close-button-carrito"
+            onClick={handleCerrarModalCarrito}
+          >
+            <GrClose />
+          </button>
+          <CarritoModal />
         </div>
       )}
 
@@ -88,7 +86,7 @@ function App() {
         </div>
 
         <div className="onSale">
-          <h1>On Sale !</h1>
+          <h1>On Sale!</h1>
           <h6 style={{ marginTop: "-4rem" }}>
             <AnimatedWord word="Ropa original de marca" />
           </h6>

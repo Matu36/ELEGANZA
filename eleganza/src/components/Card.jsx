@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Card = ({ id, marca, talle, precio, imagen }) => {
+  const [showAlert, setShowAlert] = useState(false);
+
   const handleComprarClick = () => {
     const productoComprado = {
       id,
@@ -12,13 +14,15 @@ const Card = ({ id, marca, talle, precio, imagen }) => {
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    console.log(carrito);
-
     carrito.push(productoComprado);
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    alert("Producto añadido al carrito");
+    setShowAlert(true);
+
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
   };
 
   return (
@@ -36,6 +40,13 @@ const Card = ({ id, marca, talle, precio, imagen }) => {
           Comprar{" "}
         </button>
       </div>
+      {showAlert && (
+        <div className="alert-container">
+          <div className="alert-message">
+            El producto ha sido añadido al carrito
+          </div>
+        </div>
+      )}
     </div>
   );
 };

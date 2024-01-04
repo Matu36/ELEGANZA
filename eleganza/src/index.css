@@ -63,18 +63,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
 
 .marca {
   background-color: black;
@@ -174,6 +162,26 @@ button:focus-visible {
   height: 200px;
 }
 
+/* Media query para pantallas de 900px o más */
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column; 
+    height: auto; 
+    padding-bottom: 1rem; 
+   
+  }
+
+  .footerImage {
+    width: 90%; 
+    height: auto; 
+  }
+
+  .footerSpan{
+    margin-top: -15rem;
+   padding-right: 2rem;
+  }
+}
+
 
 
 .landing {
@@ -192,8 +200,6 @@ button:focus-visible {
 .eleganzaContainer {
   display: flex;
   
-  
-
 }
 
 .eleganzaImgContainer {
@@ -215,7 +221,19 @@ justify-content: flex-start
 
 .camisasImg {
   opacity: 0.9;
+  max-width: 100%; 
+}
 
+@media (max-width:1100px) {
+  .camisasContainer {
+    
+    width: 54%
+  }
+
+  .camisasImg {
+    max-width: 80%; 
+    width: 600px;
+  }
 }
 
 .spantitle {
@@ -266,7 +284,33 @@ margin-left: 2rem;
 .onSale h1 {
   display: inline-block;
   position: relative;
-  border-bottom: 2px solid transparent; /* Línea subrayada inicialmente transparente */
+  border-bottom: 2px solid transparent; 
+}
+
+.onSale h1 {
+  
+
+  @media (max-width: 900px) {
+    font-size: 4rem; 
+  }
+}
+
+.onSale {
+  h1,
+  h6 {
+    @media (max-width: 827px) {
+      margin-left: calc((100% - 2rem) * -1);
+    }
+  }
+}
+
+@media (max-width: 764px) {
+
+
+  .onSale {
+    margin-top: 25rem;
+    margin-left: -10rem;
+  }
 }
 
 .onSale h1::after {
@@ -287,17 +331,44 @@ margin-left: 2rem;
 
 /* SliderModels.css */
 
-/* Agrega estos estilos a tu hoja de estilos CSS */
 
 .sliderContainer {
 margin: auto;
-  max-width: 90%;
+max-width: 90%;
 }
 
 .custom-slider {
   margin: 0 -50px; /* Espacio entre las imágenes */
   margin-top: 3rem;
 }
+
+@media (max-width: 800px) {
+  .custom-slider {
+    width: 100%; 
+    margin-left: 0.1rem;
+   
+  }
+}
+
+@media (max-width: 764px) {
+  .custom-slider {
+    margin-top: -3rem;
+   
+   
+  }
+}
+
+@media (max-width: 570px) {
+  
+
+  .eleganzaImgContainer {
+    margin-left: -25px;
+  },
+  .onSale {
+    margin-left: -180px; /* O cualquier valor que desees */
+  }
+}
+
 
 .slider-item {
   padding: 10px; /* Espacio dentro de cada imagen */
@@ -420,6 +491,7 @@ margin: auto;
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .cart-item {
@@ -481,7 +553,7 @@ margin: auto;
 
 
 .close-button-carrito {
-  position: absolute;
+  position: fixed;
   top: 100px; 
   right: 220px; 
   color: white;
@@ -512,6 +584,31 @@ margin: auto;
   font-size: 30px; /* Tamaño de la fuente del icono al hacer scroll */
   z-index: 1000; /* Para superponer sobre otras imágenes */
 }
+
+/* MENSAJE EL PRODUCTO HA SIDO AÑADIDO AL CARRITO */
+
+.alert-container {
+  margin-top: 15px;
+  margin-left: 10rem;
+  width: 160px;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: gray; 
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0.9;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.alert-message {
+  font-size: 16px;
+}
+
+/* .alert-container:hover {
+  opacity: 1;
+} */
+
 
 
 
