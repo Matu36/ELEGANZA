@@ -3,7 +3,7 @@ import CAMISA5 from "../src/assets/img/CAMISA5.jpg";
 import NavBar from "./components/Navbar";
 import { camisas } from "../src/utils/Camisas";
 import Card from "./components/Card";
-import Footer from "./pages/footer";
+import Footer from "./pages/Footer";
 import ELEGANZA from "../src/assets/img/ELEGANZA.png";
 import SliderModels from "./components/SliderModels";
 import miami from "../src/assets/img/miami.jpg";
