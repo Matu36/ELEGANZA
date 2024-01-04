@@ -7,6 +7,9 @@ import remera2 from "../assets/img/remera2.jpg";
 import remera3 from "../assets/img/remera3.jpg";
 import remera4 from "../assets/img/remera4.jpg";
 import remera5 from "../assets/img/remera5.jpg";
+import remera6 from "../assets/img/remera6.jpg";
+import remera7 from "../assets/img/remera7.jpg";
+import remera8 from "../assets/img/remera8.jpg";
 
 export default function SliderModels() {
   const settings = {
@@ -61,6 +64,15 @@ export default function SliderModels() {
       </div>
       <div className="slider-item">
         <img src={remera5} alt="remera5" />
+      </div>
+      <div className="slider-item">
+        <img src={remera6} alt="remera6" />
+      </div>
+      <div className="slider-item">
+        <img src={remera7} alt="remera7" />
+      </div>
+      <div className="slider-item">
+        <img src={remera8} alt="remera8" />
       </div>
     </Slider>
   );

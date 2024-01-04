@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CAMISA5 from "../src/assets/img/CAMISA5.jpg";
 import NavBar from "./components/navbar";
 import { camisas } from "../src/utils/Camisas";
@@ -9,10 +9,28 @@ import SliderModels from "./components/SliderModels";
 import miami from "../src/assets/img/miami.jpg";
 import AnimatedWord from "./components/Letras";
 import AboutUs from "./components/AboutUs";
+import CarritoModal from "./components/CarritoModal";
+import { FiShoppingCart } from "react-icons/fi";
+import { GrClose } from "react-icons/gr";
 
 function App() {
   const [selectedMarca, setSelectedMarca] = useState();
   const [modal, setModal] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [modalCarrito, setModalCarrito] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const filteredCamisas =
     selectedMarca === "Todas las marcas"
@@ -31,8 +49,33 @@ function App() {
     setModal(false);
   };
 
+  const handleMostrarModalCarrito = () => {
+    setModalCarrito(true);
+  };
+
+  const handleCerrarModalCarrito = () => {
+    setModalCarrito(false);
+  };
+
   return (
-    <div className="root">
+    <div className={`container ${scrolled ? "scrolled" : ""}`}>
+      {modalCarrito && (
+        <div className="modal">
+          <div className="modal-content">
+            <button
+              className="close-button-carrito"
+              onClick={handleCerrarModalCarrito}
+            >
+              <GrClose />
+            </button>
+            <CarritoModal />
+          </div>
+        </div>
+      )}
+
+      <button className="shoppingButton" onClick={handleMostrarModalCarrito}>
+        <FiShoppingCart />
+      </button>
       <div className="eleganzaContainer">
         <div>
           <NavBar
@@ -43,6 +86,7 @@ function App() {
         <div className="eleganzaImgContainer">
           <img src={ELEGANZA} alt="ELEGANZA" />
         </div>
+
         <div className="onSale">
           <h1>On Sale !</h1>
           <h6 style={{ marginTop: "-4rem" }}>
@@ -50,12 +94,13 @@ function App() {
           </h6>
         </div>
       </div>
-
-      <SliderModels />
       <div className="cards-container" id="cards">
         {filteredCamisas.map((camisa) => (
           <Card key={camisa.id} {...camisa} />
         ))}
+      </div>
+      <div className="sliderContainer">
+        <SliderModels />
       </div>
 
       <div className="camisasContainer">
@@ -72,6 +117,7 @@ function App() {
           </div>
         </div>
       )}
+
       <span className="copy">
         Copyright © 2024 | Eleganza Shirts Todos los derechos reservados
       </span>

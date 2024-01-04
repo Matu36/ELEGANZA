@@ -1,6 +1,26 @@
 import React from "react";
 
 const Card = ({ id, marca, talle, precio, imagen }) => {
+  const handleComprarClick = () => {
+    const productoComprado = {
+      id,
+      marca,
+      talle,
+      precio,
+      imagen,
+    };
+
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    console.log(carrito);
+
+    carrito.push(productoComprado);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    alert("Producto añadido al carrito");
+  };
+
   return (
     <div className="card" id={id}>
       <img src={imagen} alt="" className="card-image" />
@@ -11,7 +31,10 @@ const Card = ({ id, marca, talle, precio, imagen }) => {
       </div>
       <br />
       <div>
-        <button className="comprar"> Comprar </button>
+        <button className="comprar" onClick={handleComprarClick}>
+          {" "}
+          Comprar{" "}
+        </button>
       </div>
     </div>
   );

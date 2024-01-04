@@ -208,7 +208,7 @@ button:focus-visible {
 
 .camisasContainer {
 margin-top: 4rem;
-margin-left: 2rem;
+margin-left: 3rem;
 display: flex;
 justify-content: flex-start
 }
@@ -289,6 +289,11 @@ margin-left: 2rem;
 
 /* Agrega estos estilos a tu hoja de estilos CSS */
 
+.sliderContainer {
+margin: auto;
+  max-width: 90%;
+}
+
 .custom-slider {
   margin: 0 -50px; /* Espacio entre las imágenes */
   margin-top: 3rem;
@@ -335,7 +340,7 @@ margin-left: 2rem;
 
 .animated-word::after {
   animation-iteration-count: infinite;
-  animation-delay: -3s; /* Asegura que la animación comience inmediatamente después de la primera iteración */
+  animation-delay: -3s; 
 }
 
 /* ABOUT US */
@@ -345,7 +350,7 @@ margin-left: 2rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  background-color: #f0e4d7; /* Color arena */
+  background-color: #f0e4d7;
   padding: 20px;
 }
 
@@ -379,7 +384,7 @@ margin-left: 2rem;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -389,14 +394,125 @@ margin-left: 2rem;
 .close-button {
   position: absolute;
   top: 30px; 
-  right: 30px; 
+  right: 100px; 
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
- 
   background: none;
 }
+
+/* CARRITO */
+
+/* Estilos para CarritoModal.css */
+
+.carrito {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0e4d7; 
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+  display: flex;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff; /* Fondo blanco */
+}
+
+.cart-item-image img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333; /* Color de texto oscuro */
+}
+
+.cart-item-details p {
+  font-size: 14px;
+  color: #555; /* Color de texto más claro */
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.cart-item-actions button {
+  color: #fff; 
+  background-color: #333; 
+  border: 2px solid #333; 
+  padding: 10px 20px; 
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s; 
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item-actions button:hover {
+  background-color: #fff; 
+  color: #333;
+  border: 2px solid #333;
+}
+
+
+.close-button-carrito {
+  position: absolute;
+  top: 100px; 
+  right: 220px; 
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  z-index: 1000;
+}
+
+
+/* Estilos del botón de compras */
+.shoppingButton {
+  position: fixed;
+  top: 50px; /* Ajusta la posición superior según tus necesidades */
+  right: 10px; /* Ajusta la posición derecha según tus necesidades */
+  font-size: 24px; /* Tamaño de la fuente del icono */
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background: none;
+  color: white;
+}
+
+/* Estilos cuando se realiza scroll */
+.container.scrolled .shoppingButton {
+  transform: translateY(-50%); /* Ajusta según tus necesidades */
+  font-size: 30px; /* Tamaño de la fuente del icono al hacer scroll */
+  z-index: 1000; /* Para superponer sobre otras imágenes */
+}
+
 
 
 
