@@ -5,10 +5,7 @@ import { GrClose } from "react-icons/gr";
 export default function AboutUs({ handleCerrarModalAbout }) {
   return (
     <div className="about-container">
-      <button
-        onClick={handleCerrarModalAbout}
-        className="close-button" // Aplica estilos específicos a este botón
-      >
+      <button onClick={handleCerrarModalAbout} className="close-button">
         <GrClose />
       </button>
       <img src={CAMISA3} alt="" className="about-image" />

@@ -95,6 +95,22 @@ button:focus-visible {
   transition: transform 0.3s ease-in-out; 
 }
 
+@media (max-width: 769px) {
+  .card {
+   max-width: 80px;
+   margin-bottom: 5rem;
+   margin-top: -2rem;
+  }
+
+  .card-image {
+    width: 70%;
+    height: 50px;
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 10px;
+  }
+}
+
 .card:hover {
   transform: scale(1.05); 
 }
@@ -162,7 +178,6 @@ button:focus-visible {
   height: 200px;
 }
 
-/* Media query para pantallas de 900px o más */
 @media (max-width: 900px) {
   .footer {
     flex-direction: column; 
@@ -210,6 +225,12 @@ button:focus-visible {
 .eleganzaImgContainer {
   margin-left: 4rem;
 }
+
+@media (max-width:476px) {
+  .eleganzaContainer {
+    
+    margin-left: -3rem;
+  }}
 
 .navbar {
   display: flex;
@@ -338,8 +359,6 @@ margin-left: 2rem;
 }
 
 @media (max-width: 764px) {
-
-
   .onSale {
     margin-top: 25rem;
     margin-left: -10rem;
@@ -347,32 +366,28 @@ margin-left: 2rem;
 }
 
 @media (max-width: 476px) {
-
-
   .onSale {
-   
    margin-left: -15rem;
   }
 }
 
 .onSale h1::after {
-  content: ''; /* Pseudo-elemento para crear la línea subrayada */
+  content: ''; 
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  border-bottom: 2px solid #007bff; /* Color y estilo de la línea subrayada */
-  transform: scaleX(0); /* Escala inicialmente a 0 (invisibilidad) */
+  border-bottom: 2px solid #007bff; 
+  transform: scaleX(0); 
   transform-origin: 100% 50%;
-  transition: transform 0.3s ease; /* Transición para un efecto más suave */
+  transition: transform 0.3s ease; 
 }
 
 .onSale h1:hover::after {
-  transform: scaleX(1); /* Al pasar el mouse, escala a 1 (visible) */
+  transform: scaleX(1); 
 }
 
 /* SliderModels.css */
-
 
 .sliderContainer {
 margin: auto;
@@ -380,7 +395,7 @@ max-width: 86%;
 }
 
 .custom-slider {
-  margin: 0 -50px; /* Espacio entre las imágenes */
+  margin: 0 -50px;
   margin-top: 3rem;
 }
 
@@ -405,15 +420,15 @@ max-width: 86%;
     margin-left: -25px;
   }
   .onSale {
-    margin-left: -180px; /* O cualquier valor que desees */
+    margin-left: -180px; 
   }
 }
 
 
 .slider-item {
-  padding: 10px; /* Espacio dentro de cada imagen */
-  border: 1px solid #ddd; /* Borde */
-  background-color: #f5f5f5; /* Fondo gris claro */
+  padding: 10px; 
+  border: 1px solid #ddd; 
+  background-color: #f5f5f5; 
 }
 
 .slider-item img {
@@ -436,7 +451,7 @@ max-width: 86%;
   width: 100%;
   height: 1em;
   vertical-align: bottom;
-  background-color: #000; /* Color del fondo del texto */
+  background-color: #000; 
   animation: revealAnimation 3s linear;
 }
 
@@ -536,8 +551,6 @@ max-width: 86%;
 
 /* CARRITO */
 
-/* Estilos para CarritoModal.css */
-
 .carrito {
   position: fixed;
   top: 50%;
@@ -567,7 +580,7 @@ max-width: 86%;
   border: 1px solid #ccc;
   margin-bottom: 15px;
   padding: 10px;
-  background-color: #fff; /* Fondo blanco */
+  background-color: #fff; 
 }
 
 .cart-item-image img {
@@ -584,12 +597,12 @@ max-width: 86%;
 .cart-item-details h3 {
   font-size: 18px;
   margin-bottom: 5px;
-  color: #333; /* Color de texto oscuro */
+  color: #333; 
 }
 
 .cart-item-details p {
   font-size: 14px;
-  color: #555; /* Color de texto más claro */
+  color: #555; 
 }
 
 .cart-item-actions {
@@ -636,9 +649,9 @@ max-width: 86%;
 /* Estilos del botón de compras */
 .shoppingButton {
   position: fixed;
-  top: 50px; /* Ajusta la posición superior según tus necesidades */
-  right: 10px; /* Ajusta la posición derecha según tus necesidades */
-  font-size: 24px; /* Tamaño de la fuente del icono */
+  top: 50px; 
+  right: 10px; 
+  font-size: 24px;
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
@@ -648,9 +661,9 @@ max-width: 86%;
 
 /* Estilos cuando se realiza scroll */
 .container.scrolled .shoppingButton {
-  transform: translateY(-50%); /* Ajusta según tus necesidades */
-  font-size: 30px; /* Tamaño de la fuente del icono al hacer scroll */
-  z-index: 1000; /* Para superponer sobre otras imágenes */
+  transform: translateY(-50%); 
+  font-size: 30px; 
+  z-index: 1000; 
 }
 
 /* MENSAJE EL PRODUCTO HA SIDO AÑADIDO AL CARRITO */
@@ -673,9 +686,7 @@ max-width: 86%;
   font-size: 16px;
 }
 
-/* .alert-container:hover {
-  opacity: 1;
-} */
+
 
 
 

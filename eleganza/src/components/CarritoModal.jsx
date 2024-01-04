@@ -43,7 +43,6 @@ export default function CarritoModal() {
       message
     )}`;
 
-    // Abre el enlace en una nueva ventana o pestaña
     window.open(whatsappLink, "_blank");
   };
 
