@@ -182,7 +182,12 @@ button:focus-visible {
   }
 }
 
-
+@media (max-width: 476px) {
+  .footer {
+   margin-top: 2rem;
+   
+  }
+}
 
 .landing {
   background-color: black;
@@ -216,7 +221,8 @@ button:focus-visible {
 margin-top: 4rem;
 margin-left: 3rem;
 display: flex;
-justify-content: flex-start
+justify-content: flex-start;
+
 }
 
 .camisasImg {
@@ -233,6 +239,26 @@ justify-content: flex-start
   .camisasImg {
     max-width: 80%; 
     width: 600px;
+  }
+}
+
+@media (max-width:630px) {
+  .camisasContainer {
+    margin-left: 1.8rem;
+    width: 54%
+  }
+
+  .camisasImg {
+    max-width: 80%; 
+    width: 600px;
+   height: 300px;
+  }
+}
+
+@media (max-width:476px) {
+  .camisasContainer {
+    margin-top: 1.5rem;
+  
   }
 }
 
@@ -288,18 +314,25 @@ margin-left: 2rem;
 }
 
 .onSale h1 {
-  
-
   @media (max-width: 900px) {
-    font-size: 4rem; 
+    font-size: 4rem;
   }
 }
+
+@media (max-width: 900px) {
+  .onSale h6 {
+    padding-top: 3rem;
+  }
+}
+
+
 
 .onSale {
   h1,
   h6 {
     @media (max-width: 827px) {
       margin-left: calc((100% - 2rem) * -1);
+      padding-top: 2rem;
     }
   }
 }
@@ -310,6 +343,15 @@ margin-left: 2rem;
   .onSale {
     margin-top: 25rem;
     margin-left: -10rem;
+  }
+}
+
+@media (max-width: 476px) {
+
+
+  .onSale {
+   
+   margin-left: -15rem;
   }
 }
 
@@ -334,7 +376,7 @@ margin-left: 2rem;
 
 .sliderContainer {
 margin: auto;
-max-width: 90%;
+max-width: 86%;
 }
 
 .custom-slider {
@@ -353,8 +395,6 @@ max-width: 90%;
 @media (max-width: 764px) {
   .custom-slider {
     margin-top: -3rem;
-   
-   
   }
 }
 
@@ -363,7 +403,7 @@ max-width: 90%;
 
   .eleganzaImgContainer {
     margin-left: -25px;
-  },
+  }
   .onSale {
     margin-left: -180px; /* O cualquier valor que desees */
   }
@@ -425,6 +465,27 @@ max-width: 90%;
   padding: 20px;
 }
 
+@media (max-width: 800px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 500px;
+    
+   
+  }
+  .about-image {
+    width: 50%;
+   height: 50px;
+   margin-left: 1rem;
+  }
+
+  .about-content span {
+    font-size: 10px;
+    text-align: justify;
+    color: #333; 
+  }
+}
 
 
 .about-image {
@@ -444,7 +505,7 @@ max-width: 90%;
 }
 
 .about-content span {
-  font-size: 16px;
+  font-size: 12px;
   text-align: justify;
   color: #333; 
 }
@@ -492,6 +553,13 @@ max-width: 90%;
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+}
+
+@media (max-width: 676px) {
+  .carrito {
+   width: 70%;
+   max-width: 400px;
+  }
 }
 
 .cart-item {
