@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CAMISA5 from "../src/assets/img/CAMISA5.jpg";
-import NavBar from "./components/navbar";
+import NavBar from "./components/Navbar";
 import { camisas } from "../src/utils/Camisas";
 import Card from "./components/Card";
 import Footer from "./pages/footer";
