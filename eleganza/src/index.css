@@ -265,8 +265,10 @@ justify-content: flex-start;
 
 @media (max-width:630px) {
   .camisasContainer {
-    margin-left: 1.8rem;
-    width: 54%
+    margin-left: -1rem;
+    max-width: 100%;
+    width: 65%;
+    margin-top: 1.5rem;
   }
 
   .camisasImg {
@@ -279,7 +281,13 @@ justify-content: flex-start;
 @media (max-width:476px) {
   .camisasContainer {
     margin-top: 1.5rem;
+    margin-left: -1rem
   
+  }
+  .camisasImg {
+    max-width: 100%; 
+    width: 700px;
+   height: 200px;
   }
 }
 
@@ -425,6 +433,8 @@ max-width: 86%;
 }
 
 
+
+
 .slider-item {
   padding: 10px; 
   border: 1px solid #ddd; 
@@ -502,6 +512,17 @@ max-width: 86%;
   }
 }
 
+@media (max-width: 445px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    width: 78%;
+    height: 500px;
+    
+   
+  }
+}
+
 
 .about-image {
   max-width: 100%;
@@ -541,12 +562,21 @@ max-width: 86%;
 .close-button {
   position: absolute;
   top: 30px; 
-  right: 100px; 
+  right: 120px; 
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
-  background: none;
+  background:#34495e;
+  z-index: 1000;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+@media (max-width:595px) {
+  .close-button {
+    right:90px
+  }
 }
 
 /* CARRITO */
@@ -635,13 +665,15 @@ max-width: 86%;
 
 .close-button-carrito {
   position: fixed;
-  top: 100px; 
-  right: 220px; 
+  top: 10px; 
+  right: 240px; 
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
-  background: none;
+  background:#34495e;
+  z-index: 1000;
+  border-radius: 50%;
   z-index: 1000;
 }
 
@@ -683,9 +715,16 @@ max-width: 86%;
 }
 
 .alert-message {
-  font-size: 16px;
+  font-size: 14px;
 }
 
+@media (max-width: 676px) {
+  .alert-message {
+  font-size: 10px;
+  width: 60%;
+  margin-left: 2rem;
+  }
+}
 
 
 
