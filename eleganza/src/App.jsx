@@ -37,6 +37,13 @@ function App() {
       ? camisas
       : camisas.filter((c) => c.marca === selectedMarca);
 
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const carritoCount = carrito.length;
+
+  useEffect(() => {
+    carritoCount;
+  }, [carritoCount]);
+
   const handleInicioClick = () => {
     setSelectedMarca(null);
   };
@@ -73,6 +80,7 @@ function App() {
 
       <button className="shoppingButton" onClick={handleMostrarModalCarrito}>
         <FiShoppingCart />
+        {carritoCount > 0 && <span className="badge">{carritoCount}</span>}
       </button>
       <div className="eleganzaContainer">
         <div>
