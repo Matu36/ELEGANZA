@@ -35,9 +35,9 @@ export default function CarritoModal() {
     const message = carrito.reduce((acc, item) => {
       return (
         acc +
-        `Quiero encargar: ✅ ${item.marca} - Talle: ${item.talle} - Precio: $${item.precio}\n`
+        `✅ ${item.marca} - Talle: ${item.talle} - Precio: $${item.precio}\n`
       );
-    }, "👋 ¡Hola! ¿Cómo estás?\n\n");
+    }, "👋 ¡Hola! ¿Cómo estás?\n\nQuiero encargar:");
 
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
