@@ -118,9 +118,9 @@ function App() {
       <br />
       {modal && (
         <div className="modal">
-          <div className="modal-content">
-            <AboutUs handleCerrarModalAbout={handleCerrarModalAbout} />
-          </div>
+          {/* <div className="modal-content"> */}
+          <AboutUs handleCerrarModalAbout={handleCerrarModalAbout} />
+          {/* </div> */}
         </div>
       )}
 

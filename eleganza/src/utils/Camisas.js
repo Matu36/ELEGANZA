@@ -16,6 +16,7 @@ export const camisas = [
     talle: "XL",
     imagen: tomy,
     precio: 9000,
+    codigo: "ABC123",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const camisas = [
     imagen: gap,
     talle: "XL",
     precio: 8000,
+    codigo: "ABC125",
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ export const camisas = [
     talle: "XL",
     imagen: polo,
     precio: 7000,
+    codigo: "ABC126",
   },
   {
     id: 5,
@@ -37,6 +40,7 @@ export const camisas = [
     talle: "XL",
     imagen: polo1,
     precio: 7000,
+    codigo: "ABC127",
   },
   {
     id: 6,
@@ -44,6 +48,7 @@ export const camisas = [
     talle: "XL",
     imagen: polo2,
     precio: 7000,
+    codigo: "ABC128",
   },
   {
     id: 7,
@@ -51,6 +56,7 @@ export const camisas = [
     talle: "XL",
     imagen: polo3,
     precio: 7000,
+    codigo: "ABC129",
   },
   {
     id: 4,
@@ -58,6 +64,15 @@ export const camisas = [
     talle: "XL",
     imagen: kevin,
     precio: 9000,
+    codigo: "ABC130",
+  },
+  {
+    id: 8,
+    marca: "Tommy",
+    talle: "XL",
+    imagen: tomy,
+    precio: 9000,
+    codigo: "ABC124",
   },
 ];
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Card = ({ id, marca, talle, precio, imagen }) => {
+const Card = ({ id, marca, talle, precio, imagen, codigo }) => {
   const [showAlert, setShowAlert] = useState(false);
 
   const handleComprarClick = () => {
@@ -10,6 +10,7 @@ const Card = ({ id, marca, talle, precio, imagen }) => {
       talle,
       precio,
       imagen,
+      codigo,
     };
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -32,6 +33,9 @@ const Card = ({ id, marca, talle, precio, imagen }) => {
         <h2>{marca}</h2>
         <p>Talle: {talle}</p>
         <p>Precio: $ {precio}</p>
+        <p style={{ color: "grey", fontSize: "10px", marginTop: "10px" }}>
+          Código: {codigo}
+        </p>
       </div>
       <br />
       <div>
