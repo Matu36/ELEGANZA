@@ -248,19 +248,21 @@ button:focus-visible {
 .camisasImg {
   opacity: 0.9;
   max-width: 100%;
+  width: 800px;
 }
 
 @media (max-width: 480px) {
   .camisasImg {
     height: 250px;
+    
   }
 }
 
 
   .camisasImg {
-    max-width: 80%; 
-    width: 600px;
-   height: 300px;
+    max-width: 100%; 
+    width: 900px;
+   height: 500px;
   }
 
 
