@@ -5,9 +5,6 @@ import { GrClose } from "react-icons/gr";
 export default function AboutUs({ handleCerrarModalAbout }) {
   return (
     <div className="about-container">
-      <button onClick={handleCerrarModalAbout} className="close-button">
-        <GrClose />
-      </button>
       <img src={CAMISA3} alt="" className="about-image" />
       <div className="about-content">
         <h2>Sobre Nosotros</h2>
@@ -23,6 +20,9 @@ export default function AboutUs({ handleCerrarModalAbout }) {
           paso que das.
         </span>
       </div>
+      <button onClick={handleCerrarModalAbout} className="button-cerrar">
+        <GrClose />
+      </button>
     </div>
   );
 }

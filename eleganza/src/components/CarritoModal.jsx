@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { GrClose } from "react-icons/gr";
 
-export default function CarritoModal() {
+export default function CarritoModal({
+  actualizarContadorCarrito,
+  handleCerrarModalCarrito,
+}) {
   const [carrito, setCarrito] = useState(
     JSON.parse(localStorage.getItem("carrito")) || []
   );
@@ -8,13 +12,22 @@ export default function CarritoModal() {
 
   const removeFromCart = (productId) => {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    const nuevoCarrito = carrito.filter(
-      (producto) => producto.id !== productId
+
+    const indexToRemove = carrito.findIndex(
+      (producto) => producto.id === productId
     );
-    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+
+    if (indexToRemove !== -1) {
+      carrito.splice(indexToRemove, 1);
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarContadorCarrito();
   };
+
   const removeAllItemsFromCart = () => {
     localStorage.removeItem("carrito");
+    actualizarContadorCarrito();
   };
 
   useEffect(() => {
@@ -53,6 +66,9 @@ export default function CarritoModal() {
 
   return (
     <div className="carrito">
+      <button className="button-cerrar" onClick={handleCerrarModalCarrito}>
+        <GrClose />
+      </button>
       {carrito.length === 0 ? (
         <p style={{ fontWeight: "bold", color: "gray" }}>
           El carrito esta vacío

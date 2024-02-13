@@ -6,18 +6,24 @@ import Card from "./components/Card";
 import Footer from "./pages/Footer";
 import ELEGANZA from "../src/assets/img/ELEGANZA.png";
 import SliderModels from "./components/SliderModels";
-import miami from "../src/assets/img/miami.jpg";
+import miami from "../src/assets/img/MIAMIBABY.png";
 import AnimatedWord from "./components/Letras";
 import AboutUs from "./components/AboutUs";
 import CarritoModal from "./components/CarritoModal";
 import { FiShoppingCart } from "react-icons/fi";
-import { GrClose } from "react-icons/gr";
+import Contact from "./components/Contact";
+import CamisasCollection from "./components/CamisasCollection";
+import RemerasCollection from "./components/RemerasCollection";
 
 function App() {
   const [selectedMarca, setSelectedMarca] = useState();
   const [modal, setModal] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [modalCarrito, setModalCarrito] = useState(false);
+  const [carritoC, setCarritoC] = useState(0);
+  const [contact, setContact] = useState(false);
+  const [remerasCollection, setRemerasCollection] = useState(false);
+  const [camisasCollection, setCamisasCollection] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,12 +46,31 @@ function App() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const carritoCount = carrito.length;
 
-  useEffect(() => {
-    carritoCount;
-  }, [carritoCount]);
+  const actualizarContadorCarrito = () => {
+    const carritoActualizado =
+      JSON.parse(localStorage.getItem("carrito")) || [];
+    const count = carritoActualizado.length;
+    setCarritoC(count);
+  };
 
   const handleInicioClick = () => {
     setSelectedMarca(null);
+  };
+
+  const handleMostrarModalRemeras = () => {
+    setRemerasCollection(true);
+  };
+
+  const handleCerrarModalRemeras = () => {
+    setRemerasCollection(false);
+  };
+
+  const handleMostrarModalCamisas = () => {
+    setCamisasCollection(true);
+  };
+
+  const handleCerrarModalCamisas = () => {
+    setCamisasCollection(false);
   };
 
   const handleMostrarModalAbout = () => {
@@ -56,31 +81,42 @@ function App() {
     setModal(false);
   };
 
+  const handleMostrarModalContact = () => {
+    setContact(true);
+  };
+
+  const handleCerrarModalContact = () => {
+    setContact(false);
+  };
+
   const handleMostrarModalCarrito = () => {
     setModalCarrito(true);
+    actualizarContadorCarrito();
   };
 
   const handleCerrarModalCarrito = () => {
     setModalCarrito(false);
+    actualizarContadorCarrito();
   };
+
+  useEffect(() => {
+    actualizarContadorCarrito();
+  }, []);
 
   return (
     <div className={`container ${scrolled ? "scrolled" : ""}`}>
       {modalCarrito && (
         <div>
-          <button
-            className="close-button-carrito"
-            onClick={handleCerrarModalCarrito}
-          >
-            <GrClose />
-          </button>
-          <CarritoModal />
+          <CarritoModal
+            actualizarContadorCarrito={actualizarContadorCarrito}
+            handleCerrarModalCarrito={handleCerrarModalCarrito}
+          />
         </div>
       )}
 
       <button className="shoppingButton" onClick={handleMostrarModalCarrito}>
         <FiShoppingCart />
-        {carritoCount > 0 && <span className="badge">{carritoCount}</span>}
+        {carritoCount > 0 && <span className="badge">{carritoC}</span>}
       </button>
       <div className="eleganzaContainer">
         <div>
@@ -102,7 +138,11 @@ function App() {
       </div>
       <div className="cards-container" id="cards">
         {filteredCamisas.map((camisa) => (
-          <Card key={camisa.id} {...camisa} />
+          <Card
+            key={camisa.id}
+            {...camisa}
+            actualizarContadorCarrito={actualizarContadorCarrito}
+          />
         ))}
       </div>
       <div className="sliderContainer">
@@ -110,17 +150,40 @@ function App() {
       </div>
 
       <div className="camisasContainer">
-        <img src={CAMISA5} alt="camisas" className="camisasImg" />
         <img src={miami} alt="miami" className="camisasImg" />
       </div>
 
-      <Footer handleMostrarModalAbout={handleMostrarModalAbout} />
+      <Footer
+        handleMostrarModalAbout={handleMostrarModalAbout}
+        handleMostrarModalContact={handleMostrarModalContact}
+        handleMostrarModalRemeras={handleMostrarModalRemeras}
+        handleMostrarModalCamisas={handleMostrarModalCamisas}
+      />
       <br />
-      {modal && (
+      {contact && (
         <div className="modal">
           {/* <div className="modal-content"> */}
-          <AboutUs handleCerrarModalAbout={handleCerrarModalAbout} />
+          <Contact handleCerrarModalContact={handleCerrarModalContact} />
           {/* </div> */}
+        </div>
+      )}
+      {modal && (
+        <div className="modal">
+          <AboutUs handleCerrarModalAbout={handleCerrarModalAbout} />
+        </div>
+      )}
+      {camisasCollection && (
+        <div className="modal">
+          <CamisasCollection
+            handleCerrarModalCamisas={handleCerrarModalCamisas}
+          />
+        </div>
+      )}
+      {remerasCollection && (
+        <div className="modal">
+          <RemerasCollection
+            handleCerrarModalRemeras={handleCerrarModalRemeras}
+          />
         </div>
       )}
 
