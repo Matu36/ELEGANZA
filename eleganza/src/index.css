@@ -251,18 +251,20 @@ button:focus-visible {
   width: 800px;
 }
 
-@media (max-width: 480px) {
-  .camisasImg {
-    height: 250px;
-    
-  }
-}
+
 
 
   .camisasImg {
     max-width: 100%; 
     width: 900px;
-   height: 350px;
+   height: 450px;
+  }
+
+  @media (max-width: 480px) {
+    .camisasImg {
+      height: 250px;
+      
+    }
   }
 
 
