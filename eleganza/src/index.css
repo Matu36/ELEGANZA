@@ -165,7 +165,7 @@ button:focus-visible {
   display: flex;
   justify-content: space-between;
   bottom: 0;
-  margin-top: 5rem;
+  margin-top: 3rem;
   background-color: white;
   height: 300px;
   border: solid 1px black;
@@ -764,7 +764,7 @@ margin-left: 2rem;
 }
 
 .button-cerrar-remeras {
-  color: white;
+  color: black;
   background:none
 }
 
@@ -896,6 +896,7 @@ margin-left: 2rem;
   border-radius: 15px;
   overflow: hidden;
   max-width: 90%;
+  background-color: white;
 }
 
 

@@ -6,7 +6,7 @@ import Card from "./components/Card";
 import Footer from "./pages/Footer";
 import ELEGANZA from "../src/assets/img/ELEGANZA.png";
 import SliderModels from "./components/SliderModels";
-import miami from "../src/assets/img/MIAMIBABY.png";
+import foto from "../src/assets/img/foto1.png";
 import AnimatedWord from "./components/Letras";
 import AboutUs from "./components/AboutUs";
 import CarritoModal from "./components/CarritoModal";
@@ -150,7 +150,7 @@ function App() {
       </div>
 
       <div className="camisasContainer">
-        <img src={miami} alt="miami" className="camisasImg" />
+        <img src={foto} alt="foto" className="camisasImg" />
       </div>
 
       <Footer
